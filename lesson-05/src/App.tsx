@@ -20,8 +20,8 @@ function App() {
   const todolistID2 = v1();
   
   const [todolists, setTodolists] = useState<Array<TodolistsType>>([
-    {id: todolistID1, title: "Todolist - 1", filter: "all"},
-    {id: todolistID2, title: "Todolist - 2", filter: "all"},
+    {id: todolistID1, title: "What to learn", filter: "all"},
+    {id: todolistID2, title: "What to buy ", filter: "all"},
   ])
   
   const [tasks, setTasks] = useState<TasksType>({
@@ -40,17 +40,25 @@ function App() {
     ]
   });
   
+  
+  function removeTask(todolistId: string, taskId: string) {
+    setTasks({
+      ...tasks,
+      [todolistId]: tasks[todolistId].filter(el => el.id !== taskId)
+    });
+  }
+  
   function addTask(todolistId: string, title: string) {
     let newTask = {id: v1(), title: title, isDone: false};
     setTasks({...tasks, [todolistId]: [newTask, ...tasks[todolistId]]});
   }
   
-  function removeTask(todolistId: string, taskId: string) {
-    setTasks({...tasks, [todolistId]: tasks[todolistId].filter(el => el.id !== taskId)});
-  }
-  
   function changeStatus(todolistId: string, taskId: string, isDone: boolean) {
-    setTasks({...tasks, [todolistId]: tasks[todolistId].map(el => el.id === taskId ? {...el, isDone: isDone} : el)});
+    setTasks({
+      ...tasks, [todolistId]: tasks[todolistId].map(el => el.id === taskId
+        ? {...el, isDone: isDone}
+        : el)
+    });
   }
   
   function changeFilter(todolistId: string, value: FilterValuesType) {
@@ -64,6 +72,7 @@ function App() {
   function removeTodolist(todolistId: string) {
     setTodolists(todolists.filter(el => el.id !== todolistId))
     delete tasks[todolistId]
+    console.log(tasks)
   }
   
   return (
