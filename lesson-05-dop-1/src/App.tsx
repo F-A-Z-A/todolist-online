@@ -4,38 +4,35 @@ import {TaskType, Todolist} from './Todolist';
 import {v1} from 'uuid';
 
 export type FilterValuesType = "all" | "active" | "completed";
+
 type TodolistsType = { id: string, title: string }
 
-type TaskDataType = {
-  data: TaskType[]
-  filter: FilterValuesType
-}
+export type TasksType = { [key: string]: TaskDataType }
 
-type TasksType = {
-  [key: string]: TaskDataType
-}
+export type TaskDataType = { data: TaskType[], filter: FilterValuesType }
 
 function App() {
+  
   let todolistId1 = v1();
   let todolistId2 = v1();
   
   let [todolists, setTodolists] = useState<Array<TodolistsType>>([
-    {id: todolistId1, title: "Todolist - 1"},
-    {id: todolistId2, title: "Todolist - 2"}
+    {id: todolistId1, title: "What to learn"},
+    {id: todolistId2, title: "What to buy"}
   ])
   
   let [tasks, setTasks] = useState<TasksType>({
     [todolistId1]: {
       data: [
-        {id: v1(), title: "Task - 1 - 1", isDone: true},
-        {id: v1(), title: "Task - 1 - 3", isDone: false}
+        {id: v1(), title: "HTML&CSS-1", isDone: false},
+        {id: v1(), title: "JS-1", isDone: true}
       ],
       filter: "all"
     },
     [todolistId2]: {
       data: [
-        {id: v1(), title: "Task - 2 - 2", isDone: true},
-        {id: v1(), title: "Task - 2 - 4", isDone: false}
+        {id: v1(), title: "HTML&CSS-2", isDone: false},
+        {id: v1(), title: "JS-2", isDone: true}
       ],
       filter: "all"
     }
@@ -44,6 +41,7 @@ function App() {
   const removeTodolist = (todolistId: string) => {
     setTodolists(todolists.filter(el => el.id !== todolistId))
     delete tasks[todolistId]
+    console.log(tasks)
   }
   
   function removeTask(todolistId: string, taskId: string) {
@@ -66,7 +64,7 @@ function App() {
           newTask,
           ...tasks[todolistId].data
         ]
-      },
+      }
     })
   }
   
@@ -81,13 +79,7 @@ function App() {
   }
   
   function changeFilter(todolistId: string, value: FilterValuesType) {
-    setTasks({
-      ...tasks,
-      [todolistId]: {
-        ...tasks[todolistId],
-        filter: value
-      }
-    })
+    setTodolists(todolists.map(el => el.id === todolistId ? {...el, filter: value} : el))
   }
   
   return (
