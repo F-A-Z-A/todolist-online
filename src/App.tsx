@@ -7,6 +7,7 @@ import AppBar from '@mui/material/AppBar/AppBar';
 import {Button, Container, Grid, IconButton, Paper, Toolbar, Typography} from "@mui/material";
 import {Menu} from "@mui/icons-material";
 
+
 export type FilterValuesType = "all" | "active" | "completed";
 export type TodolistType = {
   id: string
@@ -14,30 +15,31 @@ export type TodolistType = {
   filter: FilterValuesType
 }
 
-type TasksStateType = {
-  [key: string]: Array<TaskType>
+export type TasksStateType = {
+  [key: string]: TaskType[]
 }
 
 function App() {
   let todolistId1 = v1();
   let todolistId2 = v1();
   
-  let [todolists, setTodolists] = useState<Array<TodolistType>>([
+  let [todolists, setTodolists] = useState<TodolistType[]>([
     {id: todolistId1, title: "What to learn", filter: "all"},
     {id: todolistId2, title: "What to buy", filter: "all"}
   ])
   
   let [tasks, setTasks] = useState<TasksStateType>({
     [todolistId1]: [
-      {id: v1(), title: "HTML&CSS", isDone: true},
+      {id: v1(), title: "HTML&CSS", isDone: false},
       {id: v1(), title: "JS", isDone: true}
     ],
     [todolistId2]: [
-      {id: v1(), title: "Milk", isDone: true},
+      {id: v1(), title: "Milk", isDone: false},
       {id: v1(), title: "React Book", isDone: true}
     ]
   });
   
+  // ------------------- task
   function removeTask(id: string, todolistId: string) {
     //достанем нужный массив по todolistId:
     let todolistTasks = tasks[todolistId];
@@ -83,6 +85,7 @@ function App() {
     }
   }
   
+  // ------------------- todolists
   function changeFilter(value: FilterValuesType, todolistId: string) {
     let todolist = todolists.find(tl => tl.id === todolistId);
     if (todolist) {
@@ -154,7 +157,7 @@ function App() {
                 <Paper style={{padding: "10px"}}>
                   <Todolist
                     key={tl.id}
-                    todoID={tl.id}
+                    id={tl.id}
                     title={tl.title}
                     tasks={tasksForTodolist}
                     removeTask={removeTask}
