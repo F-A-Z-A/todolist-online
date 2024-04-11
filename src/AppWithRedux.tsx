@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
-import {TaskType, Todolist} from './Todolist';
-import {v1} from 'uuid';
+import {TaskType} from './Todolist';
 import {AddItemForm} from './AddItemForm';
 import {AppBar, Button, Container, Grid, Paper, Toolbar, Typography} from "@mui/material";
 import IconButton from "@mui/material/IconButton/IconButton";
@@ -14,8 +13,9 @@ import {
 } from "./state/todolists-reducer";
 import {addTaskAC, changeTaskStatusAC, changeTaskTitleAC, removeTaskAC} from "./state/tasks-reducer";
 import {useDispatch, useSelector} from "react-redux";
-import {AppRootStateType} from "./store";
 import {TodolistWithRedux} from "./TodolistWithRedux";
+import {tasksSelector, todolistsSelector} from "./state/selectors";
+
 
 export type FilterValuesType = "all" | "active" | "completed";
 export type TodolistType = {
@@ -35,33 +35,10 @@ function AppWithRedux() {
   // const tasks = state.tasks
   // --------- так делать нельзя ---------------
   
-  const todolists = useSelector<AppRootStateType, Array<TodolistType>>(state => state.todolists);
-  const tasks = useSelector<AppRootStateType, TasksStateType>(state => state.tasks);
+  const todolists = useSelector(todolistsSelector);
+  const tasks = useSelector(tasksSelector);
   
   const dispatch = useDispatch();
-  
-  // const todolistId1 = v1();
-  // const todolistId2 = v1();
-  
-  // const [todolists, dispatchToTodolists] = useReducer<
-  //   Reducer<Array<TodolistType>, ActionsTypeTodolists>
-  // >(todolistsReducer, [
-  //   {id: todolistId1, title: "What to learn", filter: "all"},
-  //   {id: todolistId2, title: "What to buy", filter: "all"}
-  // ])
-  
-  // const [tasks, dispatchToTasks] = useReducer<
-  //   Reducer<TasksStateType, ActionsTypeTasks>
-  // >(tasksReducer, {
-  //   [todolistId1]: [
-  //     {id: v1(), title: "HTML&CSS", isDone: true},
-  //     {id: v1(), title: "JS", isDone: true}
-  //   ],
-  //   [todolistId2]: [
-  //     {id: v1(), title: "Milk", isDone: true},
-  //     {id: v1(), title: "React Book", isDone: true}
-  //   ]
-  // });
   
   
   // ------------ task
