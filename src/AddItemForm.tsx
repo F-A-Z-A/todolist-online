@@ -1,15 +1,17 @@
 import TextField from '@mui/material/TextField/TextField';
-import React, {ChangeEvent, KeyboardEvent, memo, useState} from 'react';
+import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
 import {IconButton} from "@mui/material";
 import {AddBox} from "@mui/icons-material";
 
-type AddItemFormPropsType = {
+
+export type AddItemFormPropsType = {
   addItem: (title: string) => void
 }
 
-export const AddItemForm = memo((props: AddItemFormPropsType) => {
-  let [title, setTitle] = useState("");
-  let [error, setError] = useState<string | null>(null);
+export const AddItemForm = React.memo((props: AddItemFormPropsType) => {
+  
+  let [title, setTitle] = useState("")
+  let [error, setError] = useState<string | null>(null)
   
   const addItem = () => {
     if (title.trim() !== "") {
@@ -21,12 +23,16 @@ export const AddItemForm = memo((props: AddItemFormPropsType) => {
   }
   
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    setTitle(e.currentTarget.value);
+    setTitle(e.currentTarget.value)
   }
   
   const onKeyPressHandler = (e: KeyboardEvent<HTMLInputElement>) => {
-    if (error !== null) setError(null);
-    if (e.charCode === 13) addItem();
+    if (error !== null) {
+      setError(null);
+    }
+    if (e.charCode === 13) {
+      addItem();
+    }
   }
   
   return <div>
