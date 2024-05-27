@@ -55,23 +55,6 @@ export type ResponseType<D = {}> = {
   fieldsErrors: Array<string>
   data: D
 }
-
-
-export enum TaskStatuses {
-  New = 0,
-  InProgress = 1,
-  Completed = 2,
-  Draft = 3
-}
-
-export enum TaskPriorities {
-  Low = 0,
-  Middle = 1,
-  Hi = 2,
-  Urgently = 3,
-  Later = 4
-}
-
 export type TaskType = {
   description: string
   title: string
@@ -92,8 +75,29 @@ export type UpdateTaskModelType = {
   startDate: string
   deadline: string
 }
-type GetTasksResponse = {
+export type GetTasksResponse = {
   error: string | null
   totalCount: number
   items: TaskType[]
+}
+
+export enum TaskStatuses {
+  New = 0,
+  InProgress = 1,
+  Completed = 2,
+  Draft = 3
+}
+
+export enum TaskPriorities {
+  Low = 0,
+  Middle = 1,
+  Hi = 2,
+  Urgently = 3,
+  Later = 4
+}
+
+export enum ResultCode {
+  SUCCESS = 0,
+  ERROR = 1,
+  RECAPTCHA_ERROR = 2
 }
