@@ -1,13 +1,13 @@
-import {AppActionsType} from "./store";
+import {AppActionType} from "./store";
 
 const initialState = {
-  error: null as null | string,
-  status: 'loading' as RequestStatusType
+  status: 'idle' as RequestStatusType,
+  error: null as null | string
 }
 
 export const appReducer = (
   state: InitialStateType = initialState,
-  action: AppActionsType
+  action: AppActionType
 ): InitialStateType => {
   switch (action.type) {
     case 'APP/SET-STATUS':
@@ -19,15 +19,15 @@ export const appReducer = (
   }
 }
 
-export const setStatusLoadingAC = (status: RequestStatusType) =>
-  ({type: 'APP/SET-STATUS', status} as const)
-export const setErrorAC = (error: null | string) =>
-  ({type: 'APP/SET-ERROR', error} as const)
+// actions
+export const setAppStatusAC = (status: RequestStatusType) =>
+  ({type: 'APP/SET-STATUS', status}) as const
+export const setAppErrorAC = (error: null | string) =>
+  ({type: 'APP/SET-ERROR', error}) as const
 
 // types
 export type RequestStatusType = 'idle' | 'loading' | 'succeeded' | 'failed'
-// ------------------ "холостой ход" | "загрузка" | "выполнена успешно" | "сбой"
 type InitialStateType = typeof initialState
 export type AppReducerActionsType =
-  | ReturnType<typeof setStatusLoadingAC>
-  | ReturnType<typeof setErrorAC>
+  | ReturnType<typeof setAppStatusAC>
+  | ReturnType<typeof setAppErrorAC>

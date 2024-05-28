@@ -13,7 +13,6 @@ import {addTaskTC, removeTaskTC, TasksStateType, updateTaskTC} from './tasks-red
 import {TaskStatuses} from '../../api/todolists-api'
 import {AddItemForm} from '../../components/AddItemForm/AddItemForm'
 import {Todolist} from './Todolist/Todolist'
-
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 
@@ -73,10 +72,7 @@ export const TodolistsList: React.FC = () => {
           return <Grid item key={tl.id}>
             <Paper style={{padding: '10px'}}>
               <Todolist
-                id={tl.id}
-                title={tl.title}
-                filter={tl.filter}
-                entityStatus={tl.entityStatus}
+                todolist={tl}
                 tasks={allTodolistTasks}
                 removeTask={removeTask}
                 changeFilter={changeFilter}
