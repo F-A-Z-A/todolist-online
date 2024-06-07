@@ -1,5 +1,5 @@
 import axios, {AxiosResponse} from 'axios'
-import {RequestStatusType} from "../app/app-reducer";
+import {LoginType} from "../features/Login/Login";
 
 const instance = axios.create({
   baseURL: 'https://social-network.samuraijs.com/api/1.1/',
@@ -10,6 +10,18 @@ const instance = axios.create({
 })
 
 // api
+export const authAPI = {
+  login(data: LoginType) {
+    return instance.post<ResponseType<{ userId: number }>>('/auth/login', data)
+  },
+  me() {
+    return instance.get<ResponseType<UserType>>('/auth/me')
+  },
+  logout() {
+    return instance.delete<ResponseType>('/auth/login')
+  }
+}
+
 export const todolistsAPI = {
   getTodolists() {
     return instance.get<TodolistType[]>('todo-lists');
@@ -97,4 +109,9 @@ type GetTasksResponse = {
   error: string | null
   totalCount: number
   items: TaskType[]
+}
+type UserType = {
+  id: number
+  email: string
+  login: string
 }
