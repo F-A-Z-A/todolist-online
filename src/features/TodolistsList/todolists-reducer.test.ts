@@ -1,6 +1,6 @@
 import { v1 } from "uuid"
 import { TodolistType } from "../../api/todolists-api"
-import { RequestStatusType } from "../../app/app-reducer"
+import { RequestStatusType } from "app/appSlice"
 import {
   FilterValuesType,
   TodolistDomainType,

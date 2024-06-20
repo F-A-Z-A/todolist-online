@@ -3,11 +3,10 @@ import "./App.css"
 import { TodolistsList } from "features/TodolistsList/TodolistsList"
 import { ErrorSnackbar } from "components/ErrorSnackbar/ErrorSnackbar"
 import { useDispatch, useSelector } from "react-redux"
-import { AppRootStateType } from "./store"
-import { initializeAppTC, selectError, selectIsInitialized, selectStatus } from "./app-reducer"
+import { initializeAppTC, selectIsInitialized, selectStatus } from "app/appSlice"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { Login } from "features/Login/Login"
-import { logoutTC } from "features/Login/auth-reducer"
+import { logoutTC, selectIsLoggedIn } from "features/Login/authSlice"
 import {
   AppBar,
   Button,
@@ -25,12 +24,10 @@ type PropsType = {
 }
 
 function App({ demo = false }: PropsType) {
-  const error = useSelector(selectError)
-  // const status = useSelector<AppRootStateType, RequestStatusType>((state) => state.app.status)
   const status = useSelector(selectStatus)
-  // const isInitialized = useSelector<AppRootStateType, boolean>((state) => state.app.isInitialized)
   const isInitialized = useSelector(selectIsInitialized)
-  const isLoggedIn = useSelector<AppRootStateType, boolean>((state) => state.auth.isLoggedIn)
+  const isLoggedIn = useSelector(selectIsLoggedIn)
+
   const dispatch = useDispatch<any>()
 
   useEffect(() => {

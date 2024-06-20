@@ -1,4 +1,4 @@
-import { appActions, appReducer, initialStateApp } from "./app-reducer"
+import { appActions, appReducer, initialStateApp } from "app/appSlice"
 
 let startState: initialStateApp
 
