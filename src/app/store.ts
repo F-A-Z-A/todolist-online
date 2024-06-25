@@ -1,27 +1,27 @@
-import { tasksName, tasksSlice } from "features/TodolistsList/tasksSlice"
-import { combineReducers } from "redux"
-import { ThunkAction, ThunkDispatch } from "redux-thunk"
-import { appName, appReducer } from "app/appSlice"
-import { authName, authReducer } from "features/Login/authSlice"
-import { configureStore, UnknownAction } from "@reduxjs/toolkit"
-import { todolistsName, todolistsReducer } from "features/TodolistsList/todolistsSlice"
+import { tasksReducer } from "features/TodolistsList/tasks.reducer";
+import { todolistsReducer } from "features/TodolistsList/todolists.reducer";
+import { AnyAction, combineReducers } from "redux";
+import { ThunkAction, ThunkDispatch } from "redux-thunk";
+import { appReducer } from "app/app.reducer";
+import { authReducer } from "features/auth/model/auth.reducer";
+import { configureStore } from "@reduxjs/toolkit";
 
 const rootReducer = combineReducers({
-  [tasksName]: tasksSlice,
-  [todolistsName]: todolistsReducer,
-  [appName]: appReducer,
-  [authName]: authReducer,
-})
+  tasks: tasksReducer,
+  todolists: todolistsReducer,
+  app: appReducer,
+  auth: authReducer,
+});
 
-// ❗старая запись, с новыми версиями не работает
-//  const store = createStore(rootReducer, applyMiddleware(thunkMiddleware));
-export const store = configureStore({ reducer: rootReducer })
+export const store = configureStore({
+  reducer: rootReducer,
+});
 
-export type AppRootStateType = ReturnType<typeof rootReducer>
+export type AppRootStateType = ReturnType<typeof rootReducer>;
 
-// ❗ UnknownAction вместо AnyAction
-export type AppThunk<ReturnType = void> = ThunkAction<ReturnType, AppRootStateType, unknown, UnknownAction>
+export type AppThunk<ReturnType = void> = ThunkAction<ReturnType, AppRootStateType, unknown, AnyAction>;
 
-// export type AppDispatch = typeof store.dispatch
-// ❗ UnknownAction вместо AnyAction
-export type AppDispatch = ThunkDispatch<AppRootStateType, unknown, UnknownAction>
+export type AppDispatch = ThunkDispatch<AppRootStateType, unknown, AnyAction>;
+
+// @ts-ignore
+window.store = store;
