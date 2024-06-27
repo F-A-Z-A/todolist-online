@@ -1,6 +1,5 @@
-import { instance } from "common/instance/instance";
-import { ResponseType } from "common/type/ResponseType";
-import { LoginParamsType } from "features/auth/api/authApi.types";
+import { instance } from "common/api/common.api";
+import { LoginParamsType, ResponseType } from "common/types";
 
 export const authAPI = {
   login(data: LoginParamsType) {

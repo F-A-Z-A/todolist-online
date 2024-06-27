@@ -4,68 +4,46 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0195b51c-e562-47d5-b6bc-a20e6d998414" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/app.reducer.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/app.reducer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/app.selectors.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/actions/common.actions.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/components/ErrorSnackbar/ErrorSnackbar.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/components/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/enums/enums.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/enums/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/hooks/useAppDispatch.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/instance/instance.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/type/ActionTestType.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/type/ResponseType.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/type/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/utils/create-app-async-thunk.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/utils/handleServerAppError.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/utils/handleServerNetworkError.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/utils/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/TodolistsList/tasks.reducer.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/TodolistsList/tasks.reducer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/TodolistsList/tasks.selectors.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/TodolistsList/todolists-api.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/TodolistsList/todolists-tasks.reducer.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/TodolistsList/todolists.reducer.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/TodolistsList/todolists.reducer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/TodolistsList/todolists.selectors.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/auth/api/authApi.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/auth/api/authApi.types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/auth/model/auth.reducer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/auth/model/auth.selectors.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/auth/ui/Login.tsx" afterDir="false" />
+    <list default="true" id="0195b51c-e562-47d5-b6bc-a20e6d998414" name="Changes" comment="Lesson-18">
+      <change afterPath="$PROJECT_DIR$/src/common/api/common.api.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/utils/handle-server-app-error.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/utils/handle-server-network-error.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/TodolistsList/todolistsApi.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/auth/Login.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/auth/auth.reducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/auth/auth.selectors.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/auth/authApi.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.prettierrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/todolists-api.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app-reducer.test.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/appSelectors.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/appSlice.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AddItemForm/AddItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/AddItemForm/AddItemForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EditableSpan/EditableSpan.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/EditableSpan/EditableSpan.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ErrorSnackbar/ErrorSnackbar.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Login/Login.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Login/authSlice.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/components/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/enums/enums.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/enums/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/enums.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/instance/instance.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/type/ActionTestType.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/type/ResponseType.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/type/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/utils/handleServerAppError.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/utils/handleServerNetworkError.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/utils/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/utils/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/Todolist/Task/Task.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/Todolist/Task/Task.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/Todolist/Todolist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/Todolist/Todolist.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/TodolistsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/TodolistsList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/tasks-reducer.test.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/tasksSlice.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/todolists-reducer.test.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/todolists-tasks-reducer.test.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/todolistsSlice.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useAppDispatch.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/tasks.reducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/test/tasks.reducer.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/tasks.reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/tasks.reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/todolists-api.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/todolists-tasks.reducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/test/todolists-tasks.reducer.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/todolists.reducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/test/todolists.reducer.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/todolists.reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/todolists.reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/auth/api/authApi.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/auth/api/authApi.types.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/auth/model/auth.reducer.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/auth/model/auth.selectors.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/auth/ui/Login.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/serviceWorker.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/serviceWorker.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setupTests.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/setupTests.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/error-utils.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,46 +78,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Jest.correct task should be added to correct array.executor": "Run",
-    "Jest.status of specified task should be changed.executor": "Run",
-    "Jest.tasks should be added for todolist - 2.executor": "Run",
-    "Jest.tasks should be added for todolist.executor": "Run",
-    "Jest.title of specified task should be changed.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.stylelint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.stylelint": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs.jest.jest_package": "D:/IT/FrontEnd/projects/git/project-todolist-online/node_modules/react-scripts",
-    "nodejs_package_manager_path": "yarn",
-    "npm.start.executor": "Run",
-    "npm.test.executor": "Run",
-    "prettierjs.PrettierConfiguration.Package": "D:\\IT\\FrontEnd\\projects\\git\\project-todolist-online\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "preferences.sourceCode.TypeScript",
-    "ts.external.directory.path": "D:\\IT\\FrontEnd\\projects\\git\\project-todolist-online\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Jest.correct task should be added to correct array.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.status of specified task should be changed.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.tasks should be added for todolist - 2.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.tasks should be added for todolist-2.executor&quot;: &quot;Debug&quot;,
+    &quot;Jest.tasks should be added for todolist.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.title of specified task should be changed.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;D:/IT/FrontEnd/projects/git/project-todolist-online/node_modules/react-scripts&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;npm.start.executor&quot;: &quot;Run&quot;,
+    &quot;npm.test.executor&quot;: &quot;Run&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;D:\\IT\\FrontEnd\\projects\\git\\project-todolist-online\\node_modules\\prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.TypeScript&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\IT\\FrontEnd\\projects\\git\\project-todolist-online\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IT\FrontEnd\projects\git\project-todolist-online\src\features\TodolistsList\test" />
       <recent name="D:\IT\FrontEnd\projects\git\project-todolist-online\src\features\TodolistsList" />
-      <recent name="D:\IT\FrontEnd\projects\git\project-todolist-online\src\features\auth\api" />
-      <recent name="D:\IT\FrontEnd\projects\git\project-todolist-online\src\features\auth\model" />
-      <recent name="D:\IT\FrontEnd\projects\git\project-todolist-online\src\features\auth\ui" />
       <recent name="D:\IT\FrontEnd\projects\git\project-todolist-online\src\common" />
+      <recent name="D:\IT\FrontEnd\projects\git\project-todolist-online\src\features\auth" />
+      <recent name="D:\IT\FrontEnd\projects\git\project-todolist-online\src\common\components" />
     </key>
     <key name="es6.move.members.recent.items">
+      <recent name="D:\IT\FrontEnd\projects\git\project-todolist-online\src\common\api\todolistsApi .ts" />
+      <recent name="D:\IT\FrontEnd\projects\git\project-todolist-online\src\common\api\authApi.ts" />
+      <recent name="D:\IT\FrontEnd\projects\git\project-todolist-online\src\common\api\common.api.ts" />
+      <recent name="D:\IT\FrontEnd\projects\git\project-todolist-online\src\common\utils\handle-server-app-error.ts" />
       <recent name="D:\IT\FrontEnd\projects\git\project-todolist-online\src\111\authApi.types.ts" />
-      <recent name="D:\IT\FrontEnd\projects\git\project-todolist-online\src\common\enums\enums.ts" />
-      <recent name="D:\IT\FrontEnd\projects\git\project-todolist-online\src\common\type\ResponseType.ts" />
-      <recent name="D:\IT\FrontEnd\projects\git\project-todolist-online\src\common\instance\instance.ts" />
-      <recent name="D:\IT\FrontEnd\projects\git\project-todolist-online\src\features\auth\api\authApi.ts" />
     </key>
   </component>
   <component name="RunManager" selected="npm.start">
@@ -191,8 +170,22 @@
       <updated>1719223111536</updated>
       <workItem from="1719223113136" duration="5881000" />
       <workItem from="1719289226387" duration="10040000" />
-      <workItem from="1719306547174" duration="7615000" />
+      <workItem from="1719306547174" duration="7843000" />
+      <workItem from="1719315263858" duration="3000" />
+      <workItem from="1719459626050" duration="404000" />
+      <workItem from="1719460159834" duration="9852000" />
+      <workItem from="1719470306694" duration="896000" />
+      <workItem from="1719478866512" duration="4455000" />
     </task>
+    <task id="LOCAL-00001" summary="Lesson-18">
+      <option name="closed" value="true" />
+      <created>1719315239296</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1719315239296</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,5 +193,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Lesson-18" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lesson-18" />
   </component>
 </project>
