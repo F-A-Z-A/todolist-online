@@ -1,7 +1,7 @@
-/*
 .App {
   padding: 30px;
   display: flex;
+  flex-direction: column;
 }
 
 .App > div {
@@ -17,10 +17,14 @@
 }
 
 .active-filter {
-  background-color: aquamarine;
+  background-color: lightgreen;
 }
 
 .is-done {
   opacity: 0.5;
 }
-*/
+
+.todolist-title-container {
+  display: flex;
+  align-items: center;
+}
