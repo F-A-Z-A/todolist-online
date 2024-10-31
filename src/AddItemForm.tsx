@@ -1,14 +1,27 @@
-import { Button } from "./Button";
 import { ChangeEvent, KeyboardEvent, useState } from "react";
+import TextField from "@mui/material/TextField";
+import AddBoxIcon from "@mui/icons-material/AddBox";
+import IconButton from "@mui/material/IconButton";
 
-type AddItemFormType = {
+type PropsType = {
   addItem: (title: string) => void;
 };
-export const AddItemForm = ({ addItem }: AddItemFormType) => {
-  const [item, setItem] = useState<string>("");
+
+export const AddItemForm = ({ addItem }: PropsType) => {
+  const [title, setTitle] = useState("");
   const [error, setError] = useState<string | null>(null);
-  const changeTaskTitleHandler = (event: ChangeEvent<HTMLInputElement>) => {
-    setItem(event.currentTarget.value);
+
+  const addItemHandler = () => {
+    if (title.trim() !== "") {
+      addItem(title.trim());
+      setTitle("");
+    } else {
+      setError("Title is required");
+    }
+  };
+
+  const changeItemHandler = (event: ChangeEvent<HTMLInputElement>) => {
+    setTitle(event.currentTarget.value);
   };
 
   const addItemOnKeyUpHandler = (event: KeyboardEvent<HTMLInputElement>) => {
@@ -17,25 +30,21 @@ export const AddItemForm = ({ addItem }: AddItemFormType) => {
       addItemHandler();
     }
   };
-
-  const addItemHandler = () => {
-    if (item.trim() !== "") {
-      addItem(item.trim());
-      setItem("");
-    } else {
-      setError("Title is required");
-    }
-  };
   return (
     <div>
-      <input
-        className={error ? "error" : ""}
-        value={item}
-        onChange={changeTaskTitleHandler}
+      <TextField
+        label="Enter a title"
+        variant={"outlined"}
+        value={title}
+        size={"small"}
+        error={!!error}
+        helperText={error}
+        onChange={changeItemHandler}
         onKeyUp={addItemOnKeyUpHandler}
       />
-      <Button title={"+"} onClick={addItemHandler} />
-      {error && <div className={"error-message"}>{error}</div>}
+      <IconButton onClick={addItemHandler} color={"primary"}>
+        <AddBoxIcon />
+      </IconButton>
     </div>
   );
 };
