@@ -4,36 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0195b51c-e562-47d5-b6bc-a20e6d998414" name="Changes" comment="Lesson-06">
-      <change afterPath="$PROJECT_DIR$/src/MenuButton.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Todolist.styles.ts" afterDir="false" />
+    <list default="true" id="31a059b1-a0d8-4cfc-bef1-758271263b79" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/src/model/tasks-reducer.test.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/model/tasks-reducer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/todolists-reducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/todolists-tasks-reducer.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AddItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddItemForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Button.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EditableSpan.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditableSpan.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Todolist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Todolist.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setupTests.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/setupTests.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/todolists-reducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/todolists-reducer.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/todolists-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/todolists-reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="TypeScript File" />
-        <option value="TypeScript JSX File" />
-      </list>
-    </option>
   </component>
   <component name="FormatOnSaveOptions">
     <option name="myRunOnSave" value="true" />
@@ -60,7 +46,7 @@
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 7
 }</component>
-  <component name="ProjectId" id="2iJyjlXQyxpiKBqVutmqtFqP0cz" />
+  <component name="ProjectId" id="2oWNvqs6tLS8MZih8GUSTAWlEjV" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -68,93 +54,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Jest.correct task should be added to correct array.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.correct todolist should be added.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.correct todolist should be removed.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.status of specified task should be changed.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.tasks should be added for todolist - 2.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.tasks should be added for todolist-2.executor&quot;: &quot;Debug&quot;,
-    &quot;Jest.tasks should be added for todolist.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.title of specified task should be changed.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.two plus two is four.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/IT/FrontEnd/projects/git/project-todolist-online/src/model&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs.jest.jest_package&quot;: &quot;D:/IT/FrontEnd/projects/git/project-todolist-online/node_modules/react-scripts&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;npm.start.executor&quot;: &quot;Run&quot;,
-    &quot;npm.test.executor&quot;: &quot;Run&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;D:\\IT\\FrontEnd\\projects\\git\\project-todolist-online\\node_modules\\prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\IT\\FrontEnd\\projects\\git\\project-todolist-online\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/IT/FrontEnd/projects/git/project-todolist-online/src/model",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.stylelint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.start.executor": "Run",
+    "npm.test.executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "D:\\IT\\FrontEnd\\projects\\git\\project-todolist-online\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "ts.external.directory.path": "D:\\IT\\FrontEnd\\projects\\git\\project-todolist-online\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\IT\FrontEnd\projects\git\project-todolist-online\src\model" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\IT\FrontEnd\projects\git\project-todolist-online\src\features\TodolistsList\test" />
-      <recent name="D:\IT\FrontEnd\projects\git\project-todolist-online\src\features\TodolistsList" />
-      <recent name="D:\IT\FrontEnd\projects\git\project-todolist-online\src\common" />
-      <recent name="D:\IT\FrontEnd\projects\git\project-todolist-online\src\features\auth" />
-      <recent name="D:\IT\FrontEnd\projects\git\project-todolist-online\src\common\components" />
-    </key>
-    <key name="es6.move.members.recent.items">
-      <recent name="D:\IT\FrontEnd\projects\git\project-todolist-online\src\common\api\todolistsApi .ts" />
-      <recent name="D:\IT\FrontEnd\projects\git\project-todolist-online\src\common\api\authApi.ts" />
-      <recent name="D:\IT\FrontEnd\projects\git\project-todolist-online\src\common\api\common.api.ts" />
-      <recent name="D:\IT\FrontEnd\projects\git\project-todolist-online\src\common\utils\handle-server-app-error.ts" />
-      <recent name="D:\IT\FrontEnd\projects\git\project-todolist-online\src\111\authApi.types.ts" />
-    </key>
   </component>
   <component name="RunManager" selected="npm.start">
-    <configuration name="correct todolist should be added" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/model/todolists-reducer.test.ts" />
-      <test-names>
-        <test-name value="correct todolist should be added" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="correct todolist should be removed" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/model/todolists-reducer.test.ts" />
-      <test-names>
-        <test-name value="correct todolist should be removed" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="two plus two is four" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/model/todolists-reducer.test.ts" />
-      <test-names>
-        <test-name value="two plus two is four" />
-      </test-names>
-      <method v="2" />
-    </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -175,20 +100,10 @@
       <envs />
       <method v="2" />
     </configuration>
-    <list>
-      <item itemvalue="Jest.correct todolist should be added" />
-      <item itemvalue="Jest.correct todolist should be removed" />
-      <item itemvalue="Jest.two plus two is four" />
-      <item itemvalue="npm.start" />
-      <item itemvalue="npm.test" />
-    </list>
     <recent_temporary>
       <list>
         <item itemvalue="npm.test" />
         <item itemvalue="npm.start" />
-        <item itemvalue="Jest.correct todolist should be added" />
-        <item itemvalue="Jest.correct todolist should be removed" />
-        <item itemvalue="Jest.two plus two is four" />
       </list>
     </recent_temporary>
   </component>
@@ -202,96 +117,19 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="0195b51c-e562-47d5-b6bc-a20e6d998414" name="Changes" comment="" />
-      <created>1719223111536</created>
+      <changelist id="31a059b1-a0d8-4cfc-bef1-758271263b79" name="Changes" comment="" />
+      <created>1730981605198</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1719223111536</updated>
-      <workItem from="1719223113136" duration="5881000" />
-      <workItem from="1719289226387" duration="10040000" />
-      <workItem from="1719306547174" duration="7843000" />
-      <workItem from="1719315263858" duration="3000" />
-      <workItem from="1719459626050" duration="404000" />
-      <workItem from="1719460159834" duration="9852000" />
-      <workItem from="1719470306694" duration="896000" />
-      <workItem from="1719478866512" duration="4736000" />
-      <workItem from="1719486363758" duration="932000" />
-      <workItem from="1719548760638" duration="6000" />
-      <workItem from="1719805806292" duration="671000" />
-      <workItem from="1719806497282" duration="10282000" />
-      <workItem from="1719821701749" duration="524000" />
-      <workItem from="1719829111722" duration="537000" />
-      <workItem from="1719982726518" duration="7325000" />
-      <workItem from="1724148018721" duration="25000" />
-      <workItem from="1724148202161" duration="3000" />
-      <workItem from="1724148387077" duration="4000" />
-      <workItem from="1725854038351" duration="10000" />
-      <workItem from="1726200753389" duration="10000" />
-      <workItem from="1726398770254" duration="3000" />
-      <workItem from="1726719132708" duration="9000" />
-      <workItem from="1726719144943" duration="4000" />
-      <workItem from="1726722375932" duration="319000" />
-      <workItem from="1726895930872" duration="3000" />
-      <workItem from="1727067919908" duration="3000" />
-      <workItem from="1728271594090" duration="17000" />
-      <workItem from="1729049906230" duration="28000" />
-      <workItem from="1729050153309" duration="728000" />
-      <workItem from="1729050940247" duration="53000" />
-      <workItem from="1729051013376" duration="2179000" />
-      <workItem from="1729073499027" duration="6277000" />
-      <workItem from="1729135628094" duration="3097000" />
-      <workItem from="1729139835401" duration="136000" />
-      <workItem from="1729140494125" duration="1000" />
-      <workItem from="1730199178351" duration="353000" />
-      <workItem from="1730199541122" duration="346000" />
-      <workItem from="1730262398549" duration="5483000" />
-      <workItem from="1730279155613" duration="7376000" />
-      <workItem from="1730300752233" duration="1899000" />
+      <updated>1730981605198</updated>
+      <workItem from="1730981606640" duration="2793000" />
+      <workItem from="1730990619663" duration="3000" />
+      <workItem from="1730990684857" duration="100000" />
+      <workItem from="1731036771364" duration="7840000" />
     </task>
-    <task id="LOCAL-00001" summary="Lesson-18">
-      <option name="closed" value="true" />
-      <created>1719315239296</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1719315239296</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Lesson-18(HomeWork-1-tasks-to-RTK)">
-      <option name="closed" value="true" />
-      <created>1719483815726</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1719483815726</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Lesson-19">
-      <option name="closed" value="true" />
-      <created>1719993033035</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1719993033035</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Lesson-06">
-      <option name="closed" value="true" />
-      <created>1729139956097</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1729139956097</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Lesson-18" />
-    <MESSAGE value="Lesson-18(HomeWork-1-tasks-to-RTK)" />
-    <MESSAGE value="Lesson-19" />
-    <MESSAGE value="Lesson-06" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lesson-06" />
   </component>
 </project>
