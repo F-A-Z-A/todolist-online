@@ -1,5 +1,12 @@
 import { v1 } from "uuid";
-import type { FilterValuesType, TodolistType } from "app/App";
+
+export type FilterValuesType = "all" | "active" | "completed";
+
+export type TodolistType = {
+  id: string;
+  title: string;
+  filter: FilterValuesType;
+};
 
 const initialState: TodolistType[] = [];
 

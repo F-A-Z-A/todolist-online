@@ -4,9 +4,9 @@ import {
   changeTaskTitleAC,
   removeTaskAC,
   tasksReducer,
-} from "features/todolists/model/tasks-reducer";
-import { addTodolistAC, removeTodolistAC } from "features/todolists/model/todolists-reducer";
-import type { TasksStateType } from "app/App";
+  TasksStateType,
+} from "../tasks-reducer";
+import { addTodolistAC, removeTodolistAC } from "../todolists-reducer";
 
 let startState: TasksStateType;
 

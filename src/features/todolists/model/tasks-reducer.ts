@@ -1,6 +1,15 @@
 import { v1 } from "uuid";
-import type { TasksStateType, TaskType } from "app/App";
-import type { AddTodolistActionType, RemoveTodolistActionType } from "features/todolists/model/todolists-reducer";
+import { AddTodolistActionType, RemoveTodolistActionType } from "./todolists-reducer";
+
+export type TaskType = {
+  id: string;
+  title: string;
+  isDone: boolean;
+};
+
+export type TasksStateType = {
+  [key: string]: TaskType[];
+};
 
 const initialState: TasksStateType = {};
 
@@ -26,7 +35,12 @@ export const tasksReducer = (state: TasksStateType = initialState, action: Actio
       return {
         ...state,
         [action.payload.todolistId]: state[action.payload.todolistId].map((t) =>
-          t.id === action.payload.taskId ? { ...t, isDone: action.payload.isDone } : t,
+          t.id === action.payload.taskId
+            ? {
+                ...t,
+                isDone: action.payload.isDone,
+              }
+            : t,
         ),
       };
     }
@@ -35,7 +49,12 @@ export const tasksReducer = (state: TasksStateType = initialState, action: Actio
       return {
         ...state,
         [action.payload.todolistId]: state[action.payload.todolistId].map((t) =>
-          t.id === action.payload.taskId ? { ...t, title: action.payload.title } : t,
+          t.id === action.payload.taskId
+            ? {
+                ...t,
+                title: action.payload.title,
+              }
+            : t,
         ),
       };
     }

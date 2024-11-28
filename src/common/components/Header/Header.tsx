@@ -1,25 +1,26 @@
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import { MenuButton } from "../MenuButton/MenuButton";
+import AppBar from "@mui/material/AppBar";
+import IconButton from "@mui/material/IconButton";
 import Switch from "@mui/material/Switch";
+import Toolbar from "@mui/material/Toolbar";
 import React from "react";
-import { changeThemeAC } from "app/app-reducer";
-import { getTheme } from "../theme";
-import { useAppDispatch, useAppSelector } from "app/hooks";
-import { selectTemeMode } from "app/app-selectors";
+import { changeThemeAC } from "../../../app/app-reducer";
+import { selectThemeMode } from "../../../app/appSelectors";
+import { useAppDispatch } from "../../hooks/useAppDispatch";
+import { useAppSelector } from "../../hooks/useAppSelector";
+import { getTheme } from "../../theme/theme";
+import { MenuButton } from "../MenuButton/MenuButton";
 
-type Props = {};
-export const Header = (props: Props) => {
-  const themeMode = useAppSelector(selectTemeMode);
+export const Header = () => {
   const dispatch = useAppDispatch();
 
-  const changeModeHandler = () => {
-    dispatch(changeThemeAC({ theme: themeMode === "light" ? "dark" : "light" }));
-  };
+  const themeMode = useAppSelector(selectThemeMode);
 
   const theme = getTheme(themeMode);
+
+  const changeModeHandler = () => {
+    dispatch(changeThemeAC(themeMode === "light" ? "dark" : "light"));
+  };
 
   return (
     <AppBar position="static" sx={{ mb: "30px" }}>

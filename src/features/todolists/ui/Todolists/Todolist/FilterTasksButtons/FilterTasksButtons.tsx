@@ -1,38 +1,40 @@
-import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
-import { changeTodolistFilterAC } from "features/todolists/model/todolists-reducer";
-import { useAppDispatch } from "app/hooks";
-import type { FilterValuesType, TodolistType } from "app/App";
-import { filterButtonsContainerSx } from "features/todolists/ui/Todolists/Todolist/FilterTasksButtons/FilterTasksButtons.styles";
+import Button from "@mui/material/Button";
+import { useAppDispatch } from "../../../../../../common/hooks/useAppDispatch";
+import { changeTodolistFilterAC, FilterValuesType, TodolistType } from "../../../../model/todolists-reducer";
+import { filterButtonsContainerSx } from "./FilterTasksButtons.styles";
 
 type Props = {
   todolist: TodolistType;
 };
+
 export const FilterTasksButtons = ({ todolist }: Props) => {
+  const { filter, id } = todolist;
+
   const dispatch = useAppDispatch();
 
   const changeFilterTasksHandler = (filter: FilterValuesType) => {
-    dispatch(changeTodolistFilterAC({ id: todolist.id, filter }));
+    dispatch(changeTodolistFilterAC({ id, filter }));
   };
 
   return (
     <Box sx={filterButtonsContainerSx}>
       <Button
-        variant={todolist.filter === "all" ? "outlined" : "text"}
+        variant={filter === "all" ? "outlined" : "text"}
         color={"inherit"}
         onClick={() => changeFilterTasksHandler("all")}
       >
         All
       </Button>
       <Button
-        variant={todolist.filter === "active" ? "outlined" : "text"}
+        variant={filter === "active" ? "outlined" : "text"}
         color={"primary"}
         onClick={() => changeFilterTasksHandler("active")}
       >
         Active
       </Button>
       <Button
-        variant={todolist.filter === "completed" ? "outlined" : "text"}
+        variant={filter === "completed" ? "outlined" : "text"}
         color={"secondary"}
         onClick={() => changeFilterTasksHandler("completed")}
       >
