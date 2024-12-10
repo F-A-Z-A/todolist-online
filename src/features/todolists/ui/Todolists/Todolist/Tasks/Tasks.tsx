@@ -1,36 +1,45 @@
 import List from "@mui/material/List";
 import { useAppSelector } from "common/hooks/useAppSelector";
+import { selectTasks } from "../../../../model/tasksSelectors";
 import { Task } from "./Task/Task";
-import type { TodolistType } from "features/todolists/model/todolists-reducer";
-import { selectTasks } from "features/todolists/model/tasksSelectors";
+import { type DomainTodolist } from "features/todolists/model/todolists-reducer";
+import { fetchTasksTC } from "features/todolists/model/tasks-reducer";
+import { useEffect } from "react";
+import { useAppDispatch } from "common/hooks";
+import { TaskStatus } from "common/enums";
 
 type Props = {
-  todolist: TodolistType;
+  todolist: DomainTodolist;
 };
 
 export const Tasks = ({ todolist }: Props) => {
   const tasks = useAppSelector(selectTasks);
-
   const allTodolistTasks = tasks[todolist.id];
+  const dispatch = useAppDispatch();
 
-  let tasksForTodolist = allTodolistTasks;
+  useEffect(() => {
+    dispatch(fetchTasksTC(todolist.id));
+  }, []);
 
-  if (todolist.filter === "active") {
-    tasksForTodolist = allTodolistTasks.filter((task) => !task.isDone);
-  }
-
-  if (todolist.filter === "completed") {
-    tasksForTodolist = allTodolistTasks.filter((task) => task.isDone);
-  }
+  const getFilteredTasks = () => {
+    let tasksForTodolist = allTodolistTasks;
+    if (todolist.filter === "active") {
+      tasksForTodolist = allTodolistTasks.filter((task) => task.status === TaskStatus.New);
+    }
+    if (todolist.filter === "completed") {
+      tasksForTodolist = allTodolistTasks.filter((task) => task.status === TaskStatus.Completed);
+    }
+    return tasksForTodolist;
+  };
 
   return (
     <>
-      {tasksForTodolist.length === 0 ? (
+      {allTodolistTasks?.length === 0 ? (
         <p>Тасок нет</p>
       ) : (
         <List>
-          {tasksForTodolist.map((task) => {
-            return <Task task={task} todolist={todolist} />;
+          {getFilteredTasks()?.map((task) => {
+            return <Task key={task.id} task={task} todolist={todolist} />;
           })}
         </List>
       )}

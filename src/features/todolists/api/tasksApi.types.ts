@@ -1,5 +1,4 @@
-import { TaskPriority, TaskStatus } from "features/todolists/lib/enums/enums";
-import type { FieldError } from "common/types";
+import { TaskPriority, TaskStatus } from "common/enums";
 
 export type GetTasksResponse = {
   error: string | null;
@@ -18,31 +17,6 @@ export type DomainTask = {
   todoListId: string;
   order: number;
   addedDate: string;
-};
-
-export type CreateTaskResponse = {
-  resultCode: number;
-  messages: string[];
-  fieldsErrors: FieldError[];
-  data: {
-    item: DomainTask;
-  };
-};
-
-export type DeleteTaskResponse = {
-  resultCode: number;
-  messages: string[];
-  fieldsErrors: FieldError[];
-  data: {};
-};
-
-export type UpdateTaskResponse = {
-  resultCode: number;
-  messages: string[];
-  fieldsErrors: FieldError[];
-  data: {
-    item: DomainTask;
-  };
 };
 
 export type UpdateTaskModel = {

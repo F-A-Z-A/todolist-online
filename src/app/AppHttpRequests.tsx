@@ -1,11 +1,11 @@
 import Checkbox from "@mui/material/Checkbox";
-import React, { useEffect, useState } from "react";
-import type { Todolist } from "features/todolists/api/todolistsApi.types";
-import type { DomainTask, UpdateTaskModel } from "features/todolists/api/tasksApi.types";
-import { todolistsApi } from "features/todolists/api/todolistsApi";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import { AddItemForm, EditableSpan } from "common/components";
-import { TaskStatus } from "features/todolists/lib/enums/enums";
+import { TaskStatus } from "common/enums";
 import { tasksApi } from "features/todolists/api/tasksApi";
+import { DomainTask, UpdateTaskModel } from "features/todolists/api/tasksApi.types";
+import { todolistsApi } from "features/todolists/api/todolistsApi";
+import { Todolist } from "features/todolists/api/todolistsApi.types";
 
 export const AppHttpRequests = () => {
   const [todolists, setTodolists] = useState<Todolist[]>([]);
@@ -31,7 +31,6 @@ export const AppHttpRequests = () => {
     todolistsApi.createTodolist(title).then((res) => {
       const newTodolist = res.data.data.item;
       setTodolists([newTodolist, ...todolists]);
-      setTasks({ ...tasks, [res.data.data.item.id]: [] });
     });
   };
 
@@ -62,9 +61,36 @@ export const AppHttpRequests = () => {
     });
   };
 
-  const updateTaskHandler = (task: DomainTask, updateParams: Partial<UpdateTaskModel>) => {
-    tasksApi.updateTask({ task, updateParams }).then((res) => {
-      const newTasks = tasks[task.todoListId].map((t) => (t.id === task.id ? { ...res.data.data.item } : t));
+  const changeTaskStatusHandler = (e: ChangeEvent<HTMLInputElement>, task: DomainTask) => {
+    let status = e.currentTarget.checked ? TaskStatus.Completed : TaskStatus.New;
+
+    const model: UpdateTaskModel = {
+      status,
+      title: task.title,
+      deadline: task.deadline,
+      description: task.description,
+      priority: task.priority,
+      startDate: task.startDate,
+    };
+
+    tasksApi.updateTask({ taskId: task.id, model, todolistId: task.todoListId }).then((res) => {
+      const newTasks = tasks[task.todoListId].map((t) => (t.id === task.id ? { ...t, ...model } : t));
+      setTasks({ ...tasks, [task.todoListId]: newTasks });
+    });
+  };
+
+  const changeTaskTitleHandler = (title: string, task: DomainTask) => {
+    const model: UpdateTaskModel = {
+      status: task.status,
+      title,
+      deadline: task.deadline,
+      description: task.description,
+      priority: task.priority,
+      startDate: task.startDate,
+    };
+
+    tasksApi.updateTask({ taskId: task.id, model, todolistId: task.todoListId }).then((res) => {
+      const newTasks = tasks[task.todoListId].map((t) => (t.id === task.id ? { ...t, ...model } : t));
       setTasks({ ...tasks, [task.todoListId]: newTasks });
     });
   };
@@ -88,15 +114,8 @@ export const AppHttpRequests = () => {
               tasks[tl.id].map((task: DomainTask) => {
                 return (
                   <div key={task.id}>
-                    <Checkbox
-                      checked={task.status === 2}
-                      onChange={(e) =>
-                        updateTaskHandler(task, {
-                          status: e.currentTarget.checked ? TaskStatus.Completed : TaskStatus.New,
-                        })
-                      }
-                    />
-                    <EditableSpan value={task.title} onChange={(title) => updateTaskHandler(task, { title })} />
+                    <Checkbox checked={task.status === 2} onChange={(e) => changeTaskStatusHandler(e, task)} />
+                    <EditableSpan value={task.title} onChange={(title) => changeTaskTitleHandler(title, task)} />
                     <button onClick={() => removeTaskHandler(task.id, tl.id)}>x</button>
                   </div>
                 );
