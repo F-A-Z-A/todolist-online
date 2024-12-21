@@ -1,25 +1,26 @@
-import MenuIcon from "@mui/icons-material/Menu";
-import AppBar from "@mui/material/AppBar";
-import IconButton from "@mui/material/IconButton";
-import Switch from "@mui/material/Switch";
-import Toolbar from "@mui/material/Toolbar";
-import React from "react";
-import { changeThemeAC } from "../../../app/app-reducer";
-import { selectThemeMode } from "../../../app/appSelectors";
-import { useAppDispatch, useAppSelector } from "common/hooks";
-import { getTheme } from "common/theme";
-import { MenuButton } from "common/components";
+import MenuIcon from "@mui/icons-material/Menu"
+import AppBar from "@mui/material/AppBar"
+import IconButton from "@mui/material/IconButton"
+import Switch from "@mui/material/Switch"
+import Toolbar from "@mui/material/Toolbar"
+import React from "react"
+import { changeThemeAC } from "app/app-reducer"
+import { selectStatusMode, selectThemeMode } from "app/appSelectors"
+import { useAppDispatch, useAppSelector } from "common/hooks"
+import { getTheme } from "common/theme"
+import { MenuButton } from "common/components"
+import LinearProgress from "@mui/material/LinearProgress/LinearProgress"
 
 export const Header = () => {
-  const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch()
+  const themeMode = useAppSelector(selectThemeMode)
+  const status = useAppSelector(selectStatusMode)
 
-  const themeMode = useAppSelector(selectThemeMode);
-
-  const theme = getTheme(themeMode);
+  const theme = getTheme(themeMode)
 
   const changeModeHandler = () => {
-    dispatch(changeThemeAC(themeMode === "light" ? "dark" : "light"));
-  };
+    dispatch(changeThemeAC(themeMode === "light" ? "dark" : "light"))
+  }
 
   return (
     <AppBar position="static" sx={{ mb: "30px" }}>
@@ -34,6 +35,7 @@ export const Header = () => {
           <Switch color={"default"} onChange={changeModeHandler} />
         </div>
       </Toolbar>
+      {status === "loading" && <LinearProgress color="secondary" />}
     </AppBar>
-  );
-};
+  )
+}
