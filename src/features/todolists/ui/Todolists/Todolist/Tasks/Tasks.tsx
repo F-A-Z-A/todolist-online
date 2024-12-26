@@ -1,8 +1,6 @@
 import List from "@mui/material/List"
-import { useEffect } from "react"
 import { TaskStatus } from "common/enums"
 import { useAppDispatch, useAppSelector } from "common/hooks"
-import { fetchTasksTC } from "../../../../model/tasks-reducer"
 import { selectTasks } from "../../../../model/tasksSelectors"
 import { DomainTodolist } from "../../../../model/todolists-reducer"
 import { Task } from "./Task/Task"
@@ -16,9 +14,9 @@ export const Tasks = ({ todolist }: Props) => {
 
   const dispatch = useAppDispatch()
 
-  useEffect(() => {
-    dispatch(fetchTasksTC(todolist.id))
-  }, [])
+  // useEffect(() => {
+  //   dispatch(fetchTasksTC(todolist.id))
+  // }, [])
 
   const allTodolistTasks = tasks[todolist.id]
 
@@ -27,7 +25,6 @@ export const Tasks = ({ todolist }: Props) => {
     if (todolist.filter === "active") {
       tasksForTodolist = allTodolistTasks.filter((task) => task.status === TaskStatus.New)
     }
-
     if (todolist.filter === "completed") {
       tasksForTodolist = allTodolistTasks.filter((task) => task.status === TaskStatus.Completed)
     }
