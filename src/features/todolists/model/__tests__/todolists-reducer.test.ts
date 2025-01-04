@@ -6,7 +6,7 @@ import {
   DomainTodolist,
   removeTodolistAC,
   todolistsReducer,
-} from "../todolists-reducer"
+} from "features/todolists/model/todolistsSlice"
 import { v1 } from "uuid"
 
 let todolistId1: string

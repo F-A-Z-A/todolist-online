@@ -2,8 +2,8 @@ import { EditableSpan } from "common/components"
 import { TaskStatus } from "common/enums"
 import { useAppDispatch } from "common/hooks"
 import { DomainTask } from "../../../../../api/tasksApi.types"
-import { removeTaskTC, updateTaskTC } from "../../../../../model/tasks-reducer"
-import { DomainTodolist } from "../../../../../model/todolists-reducer"
+import { removeTaskTC, updateTaskTC } from "features/todolists/model/tasksSlice"
+import { DomainTodolist } from "features/todolists/model/todolistsSlice"
 import { getListItemSx } from "./Task.styles"
 import { ChangeEvent } from "react"
 import DeleteIcon from "@mui/icons-material/Delete"
@@ -25,11 +25,11 @@ export const Task = ({ task, todolist }: Props) => {
 
   const changeTaskStatusHandler = (e: ChangeEvent<HTMLInputElement>) => {
     let status = e.currentTarget.checked ? TaskStatus.Completed : TaskStatus.New
-    dispatch(updateTaskTC({ ...task, status }))
+    dispatch(updateTaskTC({ taskId: task.id, todolistId: todolist.id, domainModel: { status } }))
   }
 
   const changeTaskTitleHandler = (title: string) => {
-    dispatch(updateTaskTC({ ...task, title }))
+    dispatch(updateTaskTC({ taskId: task.id, todolistId: todolist.id, domainModel: { title } }))
   }
 
   const disabled = todolist.entityStatus === "loading"

@@ -8,21 +8,24 @@ import Grid from "@mui/material/Grid"
 import TextField from "@mui/material/TextField"
 import { useAppDispatch, useAppSelector } from "common/hooks"
 import { getTheme } from "common/theme"
+import { Controller, SubmitHandler, useForm } from "react-hook-form"
+import { Navigate } from "react-router-dom"
 import { selectThemeMode } from "app/appSelectors"
-import { Controller, type SubmitHandler, useForm } from "react-hook-form"
+import { loginTC, selectIsLoggedIn } from "features/auth/model/authSlice"
 import s from "./Login.module.css"
-import { loginTC } from "features/auth/model/auth-reducer"
-import { selectIsLoggedIn } from "features/auth/model/authSelectors"
-import { useNavigate } from "react-router"
-import { Path } from "common/routing/Routing"
-import { useEffect } from "react"
+
+type Inputs = {
+  email: string
+  password: string
+  rememberMe: boolean
+}
 
 export const Login = () => {
   const themeMode = useAppSelector(selectThemeMode)
-  const theme = getTheme(themeMode)
-  const dispatch = useAppDispatch()
   const isLoggedIn = useAppSelector(selectIsLoggedIn)
-  const navigate = useNavigate()
+  const theme = getTheme(themeMode)
+
+  const dispatch = useAppDispatch()
 
   const {
     register,
@@ -37,15 +40,9 @@ export const Login = () => {
     reset()
   }
 
-  useEffect(() => {
-    if (isLoggedIn) {
-      navigate(Path.Main)
-    }
-  }, [isLoggedIn])
-
-  // if (isLoggedIn) {
-  //   return <Navigate to={Path.Main} />
-  // }
+  if (isLoggedIn) {
+    return <Navigate to={"/"} />
+  }
 
   return (
     <Grid container justifyContent={"center"}>
@@ -92,24 +89,20 @@ export const Login = () => {
                 {...register("password", {
                   required: "Password is required",
                   minLength: {
-                    value: 4,
-                    message: "Minimum 4 symbols",
+                    value: 3,
+                    message: "Password must be at least 3 characters long",
                   },
                 })}
               />
               {errors.password && <span className={s.errorMessage}>{errors.password.message}</span>}
+
               <FormControlLabel
                 label={"Remember me"}
                 control={
                   <Controller
-                    name="rememberMe"
+                    name={"rememberMe"}
                     control={control}
-                    // сброс Checkbox делаем так
-                    // render={({ field: { onChange, value } }) => (
-                    //   <Checkbox onChange={(e) => onChange(e.target.checked)} checked={value} />
-                    // )}
-                    // или так
-                    render={({ field: { value, ...rest } }) => <Checkbox {...rest} checked={value} />}
+                    render={({ field: { value, ...field } }) => <Checkbox {...field} checked={value} />}
                   />
                 }
               />
@@ -122,11 +115,4 @@ export const Login = () => {
       </Grid>
     </Grid>
   )
-}
-
-// types
-export type Inputs = {
-  email: string
-  password: string
-  rememberMe: boolean
 }
