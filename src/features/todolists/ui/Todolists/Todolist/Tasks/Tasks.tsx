@@ -2,9 +2,8 @@ import List from "@mui/material/List"
 import { useEffect } from "react"
 import { TaskStatus } from "common/enums"
 import { useAppDispatch, useAppSelector } from "common/hooks"
-import { fetchTasksTC } from "features/todolists/model/tasksSlice"
-import { selectTasks } from "../../../../model/tasksSelectors"
-import { DomainTodolist } from "features/todolists/model/todolistsSlice"
+import { fetchTasksTC, selectTasks } from "../../../../model/tasksSlice"
+import { DomainTodolist } from "../../../../model/todolistsSlice"
 import { Task } from "./Task/Task"
 
 type Props = {
