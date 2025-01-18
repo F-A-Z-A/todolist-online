@@ -1,7 +1,7 @@
 import { instance } from "common/instance"
 import { BaseResponse } from "common/types"
+import { baseApi } from "../../../app/baseApi"
 import { LoginArgs } from "./authAPI.types"
-import { baseApi } from "app/baseApi"
 
 export const authApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
@@ -9,17 +9,21 @@ export const authApi = baseApi.injectEndpoints({
       query: () => "auth/me",
     }),
     login: build.mutation<BaseResponse<{ userId: number; token: string }>, LoginArgs>({
-      query: (payload) => ({
-        method: "POST",
-        url: `auth/login`,
-        body: payload,
-      }),
+      query: (payload) => {
+        return {
+          method: "POST",
+          url: "auth/login",
+          body: payload,
+        }
+      },
     }),
     logout: build.mutation<BaseResponse, void>({
-      query: () => ({
-        method: "DELETE",
-        url: `auth/login`,
-      }),
+      query: () => {
+        return {
+          method: "DELETE",
+          url: "auth/login",
+        }
+      },
     }),
   }),
 })
