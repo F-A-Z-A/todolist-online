@@ -8,9 +8,9 @@ import { MenuButton } from "common/components"
 import { ResultCode } from "common/enums"
 import { useAppDispatch, useAppSelector } from "common/hooks"
 import { getTheme } from "common/theme"
-import { changeTheme, selectAppStatus, selectIsLoggedIn, selectThemeMode, setIsLoggedIn } from "app/appSlice"
-import { useLogoutMutation } from "features/auth/api/authAPI"
-import { baseApi } from "app/baseApi"
+import { changeTheme, selectAppStatus, selectIsLoggedIn, selectThemeMode, setIsLoggedIn } from "../../../app/appSlice"
+import { baseApi } from "../../../app/baseApi"
+import { useLogoutMutation } from "../../../features/auth/api/authAPI"
 
 export const Header = () => {
   const dispatch = useAppDispatch()
@@ -33,7 +33,6 @@ export const Header = () => {
         if (res.data?.resultCode === ResultCode.Success) {
           dispatch(setIsLoggedIn({ isLoggedIn: false }))
           localStorage.removeItem("sn-token")
-          // dispatch(baseApi.util.resetApiState())
         }
       })
       .then(() => {

@@ -1,10 +1,11 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
-import { handleError } from "common/utils/handleError"
+import { handleError } from "common/utils"
 
 export const baseApi = createApi({
   reducerPath: "todolistsApi",
   baseQuery: async (args, api, extraOptions) => {
-    // await new Promise((resolve) => setTimeout(resolve, 1000)) // эмуляция задержки
+    // await new Promise((resolve) => setTimeout(resolve, 1000))
+
     const result = await fetchBaseQuery({
       baseUrl: process.env.REACT_APP_BASE_URL,
       prepareHeaders: (headers) => {
@@ -19,4 +20,7 @@ export const baseApi = createApi({
   },
   endpoints: () => ({}),
   tagTypes: ["Todolist", "Task"],
+  keepUnusedDataFor: 10,
+  refetchOnFocus: true,
+  refetchOnReconnect: true,
 })

@@ -1,18 +1,23 @@
 import List from "@mui/material/List"
 import { TaskStatus } from "common/enums"
 import { useGetTasksQuery } from "../../../../api/tasksApi"
+import { DomainTodolist } from "../../../../lib/types/types"
+import { TasksSkeleton } from "../../../skeletons/TasksSkeleton/TasksSkeleton"
 import { Task } from "./Task/Task"
-import { TasksSkeleton } from "features/todolists/ui/skeletons/TasksSkeleton/TasksSkeleton"
-import type { DomainTodolist } from "features/todolists/ui/Todolists/lib/types/types"
+import { useState } from "react"
+import { TasksPagination } from "features/todolists/ui/Todolists/TasksPagination/TasksPagination"
+
+type Props = {
+  todolist: DomainTodolist
+}
 
 export const Tasks = ({ todolist }: Props) => {
-  const { data, isLoading } = useGetTasksQuery(todolist.id)
+  const [page, setPage] = useState<number>(1)
+  const [visibleTotalCount, setVisibleTotalCount] = useState<boolean>(true)
 
-  if (isLoading) {
-    return <TasksSkeleton />
-  }
+  const { data, isLoading } = useGetTasksQuery({ todolistId: todolist.id, args: { page } })
 
-  const getTasks = () => {
+  const getTasksForTodolist = () => {
     let tasksForTodolist = data?.items
     if (todolist.filter === "active") {
       tasksForTodolist = tasksForTodolist?.filter((task) => task.status === TaskStatus.New)
@@ -23,22 +28,24 @@ export const Tasks = ({ todolist }: Props) => {
     return tasksForTodolist
   }
 
+  if (isLoading) {
+    return <TasksSkeleton />
+  }
+
   return (
     <>
-      {data?.items?.length === 0 ? (
+      {data?.items.length === 0 ? (
         <p>Тасок нет</p>
       ) : (
-        <List>
-          {getTasks()?.map((task) => {
-            return <Task key={task.id} task={task} todolist={todolist} />
-          })}
-        </List>
+        <>
+          <List>
+            {getTasksForTodolist()?.map((task) => {
+              return <Task key={task.id} task={task} todolist={todolist} />
+            })}
+          </List>
+          {visibleTotalCount && <TasksPagination totalCount={data?.totalCount || 0} page={page} setPage={setPage} />}
+        </>
       )}
     </>
   )
-}
-
-// types
-type Props = {
-  todolist: DomainTodolist
 }

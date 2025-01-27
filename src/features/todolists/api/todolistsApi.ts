@@ -1,8 +1,7 @@
-import { instance } from "common/instance"
 import { BaseResponse } from "common/types"
 import { baseApi } from "app/baseApi"
+import { DomainTodolist } from "../lib/types/types"
 import { Todolist } from "./todolistsApi.types"
-import type { DomainTodolist } from "features/todolists/ui/Todolists/lib/types/types"
 
 export const todolistsApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
@@ -24,6 +23,19 @@ export const todolistsApi = baseApi.injectEndpoints({
       invalidatesTags: ["Todolist"],
     }),
     removeTodolist: build.mutation<BaseResponse, string>({
+      async onQueryStarted(todolistId, { dispatch, queryFulfilled }) {
+        const patchResult = dispatch(
+          todolistsApi.util.updateQueryData("getTodolists", undefined, (state) => {
+            const index = state.findIndex((tl) => tl.id === todolistId)
+            if (index !== -1) state.splice(index, 1)
+          }),
+        )
+        try {
+          await queryFulfilled
+        } catch {
+          patchResult.undo()
+        }
+      },
       query: (id) => {
         return {
           method: "DELETE",
@@ -37,9 +49,7 @@ export const todolistsApi = baseApi.injectEndpoints({
         return {
           method: "PUT",
           url: `todo-lists/${id}`,
-          body: {
-            title,
-          },
+          body: { title },
         }
       },
       invalidatesTags: ["Todolist"],
@@ -53,19 +63,3 @@ export const {
   useRemoveTodolistMutation,
   useUpdateTodolistTitleMutation,
 } = todolistsApi
-
-export const _todolistsApi = {
-  getTodolists() {
-    return instance.get<Todolist[]>("todo-lists")
-  },
-  updateTodolist(payload: { id: string; title: string }) {
-    const { title, id } = payload
-    return instance.put<BaseResponse>(`todo-lists/${id}`, { title })
-  },
-  createTodolist(title: string) {
-    return instance.post<BaseResponse<{ item: Todolist }>>("todo-lists", { title })
-  },
-  deleteTodolist(id: string) {
-    return instance.delete<BaseResponse>(`todo-lists/${id}`)
-  },
-}
